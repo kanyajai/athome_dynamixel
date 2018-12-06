@@ -1,0 +1,65 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find athome_dynamixel)/config/joint_controllers_1.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="joint_1" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                pan_controller_1
+                tilt_controller_1"
+          output="screen"/>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find athome_dynamixel)/config/joint_controllers_2.yaml" command="load"/>
+    #
+    <!-- start specified joint controllers -->
+    <node name="joint_2" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                pan_controller_2
+                tilt_controller_2"
+          output="screen"/>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find athome_dynamixel)/config/joint_controllers_3.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="joint_3" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                pan_controller_3
+                tilt_controller_3"
+          output="screen"/>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find athome_dynamixel)/config/joint_controllers_4.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="joint_4" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                pan_controller_4
+                tilt_controller_4"
+          output="screen"/>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find athome_dynamixel)/config/joint_controllers_5.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="joint_5" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=pan_tilt_port
+                --type=simple
+                pan_controller_5
+                tilt_controller_5"
+          output="screen"/>
+
+
+</launch>
