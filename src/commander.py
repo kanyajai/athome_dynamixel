@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import rospy
+import motor_1
+
 from subprocess import call
 
 __author__ = 'kanyajai'
