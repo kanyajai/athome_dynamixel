@@ -4,16 +4,14 @@ from subprocess import call
 
 import grab_dynamixel
 import commander
-from dynamixel_msgs.msg import JointState
-from std_msgs.msg import Float64
 
 
 def resting_state():
-    commander.combo_motors_2(0, 1.5, 2.2, 1.76, -0.65)
+    commander.combo_motors(0, 1.5, 2.2, 1.76, -0.65)
 
 
 def pre_grab_state():
-    commander.combo_motors_1(0, 1.5, 0, 0, -0.7)
+    commander.combo_motors(0, 1.5, 0, 0, -0.7)
 
 
 def main():
@@ -29,4 +27,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
+
